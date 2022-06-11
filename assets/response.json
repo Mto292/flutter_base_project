@@ -1,0 +1,254 @@
+[
+  {
+    "id": 27,
+    "start_date": "2022-04-25T03:00:00+03:00",
+    "end_date": "2022-07-01T02:59:59.999000+03:00",
+    "file_url": {
+      "app": "https://siparisimcdn2.s3.eu-central-1.amazonaws.com/icdn/campaign-app-image-750x320-bannerlar-02-0-10750722855504602.png",
+      "web": "https://siparisimcdn2.s3.eu-central-1.amazonaws.com/icdn/campaign-web-image-750x320-bannerlar-02-0-47731350116153803.png"
+    },
+    "title": "Kitchennette Ä°ndirim",
+    "session_point_id": "MARKETPLACE",
+    "description": "",
+    "create_date": "2022-04-25T22:42:33.001000+03:00",
+    "target_id": "dealer",
+    "client_point": "MOBILE_APP",
+    "target_object": {
+      "dealer_id": 603,
+      "dealer_name": "Kitchenette Maltepe"
+    }
+  },
+  {
+    "id": 29,
+    "start_date": "2022-05-27T03:00:00+03:00",
+    "end_date": "2022-06-28T02:59:59.999000+03:00",
+    "file_url": {
+      "app": "https://siparisimcdn2.s3.eu-central-1.amazonaws.com/icdn/campaign-app-image-banner-mobil3-0-9971800030855225.jpeg",
+      "web": "https://siparisimcdn2.s3.eu-central-1.amazonaws.com/icdn/campaign-web-image-banner-web3-0-007152477971276272.jpeg"
+    },
+    "title": "Ä°Ã§ecekler Bizden",
+    "session_point_id": "MARKETPLACE",
+    "description": "",
+    "create_date": "2022-05-27T13:10:56.288000+03:00",
+    "target_id": "product",
+    "client_point": "MOBILE_APP",
+    "target_object": {
+      "id": 722,
+      "price": [
+        {
+          "price": 6.34,
+          "is_default": false,
+          "order_delivery_type_id": "TAKEOUT"
+        },
+        {
+          "price": 6.34,
+          "is_default": false,
+          "order_delivery_type_id": "GETIN"
+        },
+        {
+          "price": 6.34,
+          "is_default": false,
+          "order_delivery_type_id": "TABLE"
+        }
+      ],
+      "images": [
+        {
+          "id": 2725,
+          "image_url": "https://siparisimcdn2.s3.eu-central-1.amazonaws.com/icdn/mobile-list-liptonicetea33cl-big-0-8874193220988851.webp",
+          "list_order": 9083,
+          "image_size_id": "mobile_list"
+        },
+        {
+          "id": 2726,
+          "image_url": "https://siparisimcdn2.s3.eu-central-1.amazonaws.com/icdn/mobile-list-col-liptonicetea33cl-big-0-09923103741442518.webp",
+          "list_order": 9083,
+          "image_size_id": "mobile_list_col"
+        },
+        {
+          "id": 2727,
+          "image_url": "https://siparisimcdn2.s3.eu-central-1.amazonaws.com/icdn/mobile-detail-liptonicetea33cl-big-0-5343196690639709.webp",
+          "list_order": 9083,
+          "image_size_id": "mobile_detail"
+        }
+      ],
+      "calories": 110,
+      "make_time": 15,
+      "option_count": 0,
+      "product_name": "Lipton Ice Tea (33 cl.)",
+      "short_description": "SoÄuk servis edilir."
+    }
+  },
+  {
+    "id": 32,
+    "start_date": "2022-06-01T03:00:00+03:00",
+    "end_date": "2022-07-02T02:59:59.999000+03:00",
+    "file_url": {},
+    "title": "Deneme banner",
+    "session_point_id": "MARKETPLACE",
+    "description": "",
+    "create_date": "2022-06-01T17:04:22.835000+03:00",
+    "target_id": "product",
+    "client_point": "MOBILE_APP",
+    "target_object": {
+      "id": 716,
+      "price": [
+        {
+          "price": 38.68,
+          "is_default": false,
+          "order_delivery_type_id": "GETIN"
+        },
+        {
+          "price": 38.68,
+          "is_default": false,
+          "order_delivery_type_id": "TAKEOUT"
+        },
+        {
+          "price": 38.68,
+          "is_default": false,
+          "order_delivery_type_id": "TABLE"
+        }
+      ],
+      "images": [
+        {
+          "id": 2677,
+          "image_url": "https://siparisimcdn2.s3.eu-central-1.amazonaws.com/icdn/mobile-list-eggyburger-20210427175438-big-0-673160820990014.webp",
+          "list_order": 9594,
+          "image_size_id": "mobile_list"
+        },
+        {
+          "id": 2678,
+          "image_url": "https://siparisimcdn2.s3.eu-central-1.amazonaws.com/icdn/mobile-list-col-eggyburger-20210427175438-big-0-9971174423890184.webp",
+          "list_order": 9594,
+          "image_size_id": "mobile_list_col"
+        },
+        {
+          "id": 2679,
+          "image_url": "https://siparisimcdn2.s3.eu-central-1.amazonaws.com/icdn/mobile-detail-eggyburger-20210427175438-big-0-02178491365544033.webp",
+          "list_order": 9594,
+          "image_size_id": "mobile_detail"
+        }
+      ],
+      "calories": 1250,
+      "make_time": 15,
+      "option_count": 3,
+      "product_name": "Eggy Burger",
+      "short_description": "140 gr. hamburger kÃ¶ftesi, turÅu, domates, karamelize soÄan, cheddar peyniri, butchers sos, kÄ±zarmÄ±Å yumurta, Butcher's sos. Patates kÄ±zartmasÄ±, seÃ§eceÄiniz sos ile"
+    }
+  },
+  {
+    "id": 26,
+    "start_date": "2022-04-25T03:00:00+03:00",
+    "end_date": "2022-07-01T02:59:59.999000+03:00",
+    "file_url": {
+      "app": "https://siparisimcdn2.s3.eu-central-1.amazonaws.com/icdn/campaign-app-image-750x320-bannerlar-01-0-859159523821532.png",
+      "web": "https://siparisimcdn2.s3.eu-central-1.amazonaws.com/icdn/campaign-web-image-750x320-bannerlar-01-0-6900595357139099.png"
+    },
+    "title": "Ä°lk sipariÅinizde 15TL Ä°ndirim",
+    "session_point_id": "MARKETPLACE",
+    "description": "",
+    "create_date": "2022-04-25T22:40:57.798000+03:00",
+    "target_id": "campaign",
+    "client_point": "MOBILE_APP",
+    "target_object": {
+      "campaign_id": 118,
+      "campaign_title": "Ä°lk SipariÅ KampanyasÄ± (25 Nisan 2022 Silmeyin)"
+    }
+  },
+  {
+    "id": 31,
+    "start_date": "2022-05-02T14:33:08.555000+03:00",
+    "end_date": "2022-07-01T14:33:11.985000+03:00",
+    "file_url": {
+      "app": "https://siparisimcdn2.s3.eu-central-1.amazonaws.com/icdn/campaign-app-image-banner-mobill2-0-16238558226000066.jpeg",
+      "web": "https://siparisimcdn2.s3.eu-central-1.amazonaws.com/icdn/campaign-web-image-banner-web2-0-08405204625619955.jpeg"
+    },
+    "title": "Ä°Ã§ecek",
+    "session_point_id": "MARKETPLACE",
+    "description": "",
+    "create_date": "2022-06-01T14:34:42.394000+03:00",
+    "target_id": "product",
+    "client_point": "MOBILE_APP",
+    "target_object": {
+      "id": 721,
+      "price": [
+        {
+          "price": 6.34,
+          "is_default": false,
+          "order_delivery_type_id": "TAKEOUT"
+        },
+        {
+          "price": 6.34,
+          "is_default": false,
+          "order_delivery_type_id": "GETIN"
+        },
+        {
+          "price": 3.34,
+          "is_default": false,
+          "order_delivery_type_id": "TABLE"
+        }
+      ],
+      "images": [
+        {
+          "id": 2717,
+          "image_url": "https://siparisimcdn2.s3.eu-central-1.amazonaws.com/icdn/mobile-list-pepsi30cl-big-0-5048890687870569.webp",
+          "list_order": 8027,
+          "image_size_id": "mobile_list"
+        },
+        {
+          "id": 2718,
+          "image_url": "https://siparisimcdn2.s3.eu-central-1.amazonaws.com/icdn/mobile-list-col-pepsi30cl-big-0-1091282618617051.webp",
+          "list_order": 8027,
+          "image_size_id": "mobile_list_col"
+        },
+        {
+          "id": 2719,
+          "image_url": "https://siparisimcdn2.s3.eu-central-1.amazonaws.com/icdn/mobile-detail-pepsi30cl-big-0-8923282257899533.webp",
+          "list_order": 8027,
+          "image_size_id": "mobile_detail"
+        }
+      ],
+      "calories": 130,
+      "make_time": 15,
+      "option_count": 0,
+      "product_name": "Pepsi (30 cl.)",
+      "short_description": "SoÄuk servis edilir."
+    }
+  },
+  {
+    "id": 28,
+    "start_date": "2022-04-25T03:00:00+03:00",
+    "end_date": "2022-07-01T02:59:59.999000+03:00",
+    "file_url": {
+      "app": "https://siparisimcdn2.s3.eu-central-1.amazonaws.com/icdn/campaign-app-image-750x320-bannerlar-03-0-1254010217628826.png",
+      "web": "https://siparisimcdn2.s3.eu-central-1.amazonaws.com/icdn/campaign-web-image-750x320-bannerlar-03-0-7986875261533787.png"
+    },
+    "title": "KazandÄ±ran Saatler",
+    "session_point_id": "MARKETPLACE",
+    "description": "",
+    "create_date": "2022-05-27T11:34:23.760000+03:00",
+    "target_id": "campaign",
+    "client_point": "MOBILE_APP",
+    "target_object": {
+      "campaign_id": 116,
+      "campaign_title": "Ä°lk SipariÅ KampanyasÄ± (25 Nisan 2022 Silmeyin)"
+    }
+  },
+  {
+    "id": 30,
+    "start_date": "2022-05-26T00:00:00+03:00",
+    "end_date": "2022-07-29T02:59:59.999000+03:00",
+    "file_url": {
+      "app": "https://siparisimcdn2.s3.eu-central-1.amazonaws.com/icdn/campaign-app-image-banner-mobill2-0-16238558226000066.jpeg",
+      "web": "https://siparisimcdn2.s3.eu-central-1.amazonaws.com/icdn/campaign-web-image-banner-web2-0-08405204625619955.jpeg"
+    },
+    "title": "Web sitemizden yaptÄ±ÄÄ±nÄ±z ilk sipariÅte 15 TL indirim.",
+    "session_point_id": "MARKETPLACE",
+    "description": "",
+    "create_date": "2022-05-27T13:48:10.916000+03:00",
+    "target_id": "link",
+    "client_point": "MOBILE_APP",
+    "target_object": {
+      "url": "https://siparisim.com.tr/"
+    }
+  }
+]
