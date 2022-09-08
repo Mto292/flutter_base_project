@@ -55,7 +55,7 @@ class AppInfo {
         deviceId = iosDeviceInfo.identifierForVendor!;
       } else {
         final androidDeviceInfo = await deviceInfo.androidInfo;
-        deviceId = androidDeviceInfo.androidId!;
+        deviceId = androidDeviceInfo.id!;
       }
     } catch (e) {
       debugPrint(e.toString());
