@@ -24,15 +24,15 @@ class MeasureSize extends SingleChildRenderObjectWidget {
 
   @override
   RenderObject createRenderObject(BuildContext context) {
-    return TSRenderObject(onChange);
+    return MyRenderObject(onChange);
   }
 }
 
-class TSRenderObject extends RenderProxyBox {
+class MyRenderObject extends RenderProxyBox {
   Size? oldSize;
   final OnSizeChange? onChange;
 
-  TSRenderObject(this.onChange);
+  MyRenderObject(this.onChange);
 
   @override
   void performLayout() {
@@ -42,7 +42,7 @@ class TSRenderObject extends RenderProxyBox {
     if (oldSize == newSize) return;
 
     oldSize = newSize;
-    WidgetsBinding.instance!.addPostFrameCallback((_) {
+    WidgetsBinding.instance.addPostFrameCallback((_) {
       if (onChange != null) onChange!(newSize);
     });
   }

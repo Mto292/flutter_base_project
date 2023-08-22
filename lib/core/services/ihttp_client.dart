@@ -14,10 +14,9 @@ abstract class IHttpClient {
     String method, {
     required Map<String, String>? headerParam,
     Map<String, dynamic> bodyParam = const {},
-    String pathBody = '',
+    String? baseUrl,
   }) async {
-    if (pathBody != '') pathBody = '/' + pathBody;
-    final uri = Uri.https(baseUrl, method + pathBody, bodyParam);
+    final uri = Uri.https(baseUrl ?? this.baseUrl, method, bodyParam);
     final response = await http.get(uri, headers: headerParam);
     return response;
   }
@@ -27,9 +26,10 @@ abstract class IHttpClient {
     String method, {
     required Map<String, dynamic> bodyParam,
     required Map<String, String>? headerParam,
+    String? baseUrl,
   }) async {
     final encodedBody = json.encode(bodyParam);
-    final uri = Uri.https(baseUrl, method);
+    final uri = Uri.https(baseUrl ?? this.baseUrl, method);
     final response = await http.post(
       uri,
       headers: headerParam,
@@ -44,9 +44,10 @@ abstract class IHttpClient {
     String method, {
     required Map<String, String>? headerParam,
     Map<String, dynamic> bodyParam = const {},
+    String? baseUrl,
   }) async {
     final encodedBody = json.encode(bodyParam);
-    final uri = Uri.https(baseUrl, method);
+    final uri = Uri.https(baseUrl ?? this.baseUrl, method);
     final response = await http.delete(
       uri,
       headers: headerParam,
@@ -61,9 +62,10 @@ abstract class IHttpClient {
     String method, {
     required Map<String, String>? headerParam,
     Map<String, dynamic> bodyParam = const {},
+    String? baseUrl,
   }) async {
     final encodedBody = json.encode(bodyParam);
-    final uri = Uri.https(baseUrl, method);
+    final uri = Uri.https(baseUrl ?? this.baseUrl, method);
     final response = await http.put(
       uri,
       headers: headerParam,
@@ -78,9 +80,10 @@ abstract class IHttpClient {
     String method, {
     required Map<String, dynamic> bodyParam,
     required Map<String, String>? headerParam,
+    String? baseUrl,
   }) async {
     final encodedBody = json.encode(bodyParam);
-    final uri = Uri.https(baseUrl, method);
+    final uri = Uri.https(baseUrl ?? this.baseUrl, method);
     final response = await http.post(
       uri,
       headers: headerParam,

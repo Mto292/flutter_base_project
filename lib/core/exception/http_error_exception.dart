@@ -1,10 +1,10 @@
 import '../i10n/i10n.dart';
 
 /// Written for Http Exception error
-class HttpError implements Exception {
+class AppException implements Exception {
   String? message;
 
-  HttpError([this.message]);
+  AppException([this.message]);
 
   @override
   String toString() {
@@ -13,10 +13,18 @@ class HttpError implements Exception {
   }
 }
 
-class ServerError extends HttpError {
+class ServerError extends AppException {
   ServerError() : super(AppLocalization.getLabels.serverErrorMessage);
 }
 
-class InternetError extends HttpError {
+class InternetError extends AppException {
   InternetError() : super(AppLocalization.getLabels.noInternetErrorMessage);
+}
+
+class UnauthorizedError extends AppException {
+  UnauthorizedError() : super(AppLocalization.getLabels.unauthorizedErrorMessage);
+}
+
+class GeneralWarning extends AppException {
+  GeneralWarning(super.message);
 }

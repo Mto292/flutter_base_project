@@ -1,7 +1,7 @@
-import 'package:dop_flutter_base_project/app/extensions/widget_extension.dart';
 import 'package:flutter/material.dart';
-import '../../constants/app/padding_and_radius_size.dart';
-import '../../navigation/size_config.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_base_project/app/extensions/widget_extension.dart';
+import '../../constants/other/padding_and_radius_size.dart';
 
 /// Drawer - turkcell icon - masa icon şekinde işletme ekranının appbarı
 ///
@@ -10,12 +10,14 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   final String? title;
   final double? elevation;
   final Widget? actionWidget;
-  final Widget? actionLeading;
+  final Widget? leading;
   final double? actionPadding;
   final Key? appBarKey;
   final double? leadingWidth;
   final Color? backgroundColor;
   final IconThemeData? iconTheme;
+  final bool? centerTitle;
+  final SystemUiOverlayStyle? systemOverlayStyle;
 
   const MyAppBar({
     Key? key,
@@ -24,29 +26,27 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.title,
     this.actionWidget,
     this.actionPadding,
-    this.actionLeading,
+    this.leading,
     this.appBarKey,
     this.leadingWidth,
     this.backgroundColor,
     this.iconTheme,
+    this.centerTitle,
+    this.systemOverlayStyle,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      key: appBarKey,
+      systemOverlayStyle: systemOverlayStyle,
+      centerTitle: centerTitle,
       iconTheme: iconTheme,
       leadingWidth: leadingWidth,
-      key: appBarKey,
       elevation: elevation,
-      leading: actionLeading,
+      leading: leading,
       backgroundColor: backgroundColor,
-      title: title != null
-          ? Text(title!) //textStyle lı appBar theme den alıyor
-          : titleWidget ??
-              Image.asset(
-                '',
-                height: (SizeConfig.appBarHeight / 100) * 58,
-              ),
+      title: title != null ? Text(title!) : titleWidget,
       actions: [
         Padding(
           padding: EdgeInsets.only(right: actionPadding ?? paddingM),

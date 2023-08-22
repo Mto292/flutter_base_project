@@ -1,33 +1,59 @@
-name: dop_flutter_base_project
-description: Flutter Base Project.
+name: flutter_base_project
+description: A new Flutter project.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
-publish_to: 'none'
-version: 1.0.0+1
+version: 2.0.0+2
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
+  flutter: 3.7.10
+  sdk: '>=3.0.6 <4.0.0'
 
 dependencies:
   flutter:
     sdk: flutter
-
-  # UI
-  cupertino_icons: ^1.0.5
-  flutter_styled_toast: ^2.1.3
-  overlay_loading_progress: ^1.0.0
-  flutter_svg: ^1.1.4
+  flutter_localizations:
+    sdk: flutter
 
   # Core
-  shared_preferences: ^2.0.15
-  get: ^4.6.5
-  background_json_parser: ^1.0.3
-  package_info_plus: ^1.4.3+1
-  device_info_plus: ^4.1.2
+  intl: any
+  collection: any
+  shared_preferences: ^2.1.1
+  uuid: ^3.0.7
+  package_info_plus: ^4.0.1
+  url_launcher: ^6.1.11
+  async: ^2.11.0
+  device_info_plus: ^9.0.1
+  background_json_parser: ^1.0.4 # Json parse işlemini yapar
+  text_mask: ^1.0.4
 
   # Network
   http: ^0.13.5
   connectivity: ^3.0.6
-  url_launcher: ^6.1.5
+  webview_flutter: ^4.2.1
+  socket_io_client: ^2.0.2
+  cached_network_image: ^3.2.3
+  android_id: ^0.3.3
+
+  # UI
+  cupertino_icons: ^1.0.5
+  flutter_svg: ^2.0.6
+  flutter_local_notifications: ^14.1.0
+  banner_image: ^1.0.7
+  overlay_kit: ^1.0.8
+
+  # Firebase
+  firebase_core: ^2.15.0
+  firebase_messaging: ^14.6.5
+  firebase_dynamic_links: ^5.3.4
+
+  # State manager
+  get: ^4.6.5
+
+  # Error handler
+  dop_logger:
+    git:
+      url: https://github.com/dophub/applogger.git
+      ref: prod-0801
 
 dev_dependencies:
   # test_coverage: ^0.5.0
@@ -36,13 +62,30 @@ dev_dependencies:
   integration_test:
     sdk: flutter
   flutter_lints: any
+  dart_code_metrics: ^5.5.1
+  build_runner:
+  flutter_gen_runner:
+
+dependency_overrides:
+  async: ^2.8.2
+
+flutter_gen:
+  output: lib/app/constants/assets
+  line_length: 120
+
+  integrations:
+    flutter_svg: true
+  fonts:
+    enabled: false
 
 flutter:
   uses-material-design: true
-
   assets:
-    - assets/images/other/
-    - assets/images/flags/
+    - assets/other/
+    - assets/flags/
+    - assets/illustrations/
+    - assets/icons/
+    - assets/gif/
 
   fonts:
     - family: GreycliffCF
@@ -53,5 +96,7 @@ flutter:
           weight: 400
         - asset: assets/fonts/GreycliffCF-Medium.ttf
           weight: 500
+        - asset: assets/fonts/GreycliffCF-DemiBold.ttf
+          weight: 600
         - asset: assets/fonts/GreycliffCF-Bold.ttf
           weight: 700

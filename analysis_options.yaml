@@ -1,0 +1,85 @@
+include: package:flutter_lints/flutter.yaml
+
+dart_code_metrics:
+  anti-patterns:
+    - long-method
+    - long-parameter-list
+  metrics:
+    cyclomatic-complexity: 20
+    maintainability-index: 50
+    maximum-nesting: 5
+    number-of-parameters: 5
+    source-lines-of-code: 50
+    technical-debt:
+      threshold: 16
+      todo-cost: 4
+      ignore-cost: 8
+      ignore-for-file-cost: 16
+      as-dynamic-cost: 16
+      deprecated-annotations-cost: 2
+      file-nullsafety-migration-cost: 2
+      unit-type: "hours"
+  metrics-exclude:
+    - test/src/analyzer_plugin/**
+    - test/src/analyzers/**
+    - test/src/cli/**
+    - test/src/config_builder/**
+    - test/src/helpers/**
+    - test/src/reporters/**
+    - test/src/utils/**
+    - test/resources/*
+    - test/*
+  rules:
+    - avoid-collection-methods-with-unrelated-types
+    - avoid-dynamic:
+        exclude:
+          - test/**
+    - avoid-global-state
+    - avoid-late-keyword:
+        exclude:
+          - test/**
+    - avoid-missing-enum-constant-in-map
+    - avoid-unnecessary-type-assertions
+    - avoid-unnecessary-type-casts
+    - avoid-unused-parameters
+    - binary-expression-operand-order
+    - double-literal-format
+    - newline-before-return
+    - no-boolean-literal-compare
+    - no-empty-block
+    - no-equal-then-else
+    - no-object-declaration
+    - prefer-async-await
+    - prefer-conditional-expressions
+    - prefer-correct-identifier-length:
+        exceptions:
+          - id
+          - ok
+    - prefer-correct-type-name:
+        max-length: 44
+    - prefer-first
+    - prefer-last
+    - prefer-match-file-name:
+        exclude:
+          - test/**
+    - prefer-moving-to-variable:
+        exclude:
+          - test/**
+    - prefer-trailing-comma
+
+
+linter:
+  # https://dart-lang.github.io/linter/lints/index.html.
+  # https://dart.dev/guides/language/analysis-options
+  rules:
+    prefer_is_empty: false
+    use_build_context_synchronously: false
+    no_leading_underscores_for_local_identifiers: false
+    library_private_types_in_public_api: false
+
+
+
+
+
+
+

@@ -1,88 +1,120 @@
-import 'package:dop_flutter_base_project/app/extensions/widgets_scale_extension.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_styled_toast/flutter_styled_toast.dart';
 import 'package:flutter_svg/svg.dart';
-import '../../constants/app/padding_and_radius_size.dart';
-import '../../constants/asset/assets.dart';
-import '../../theme/colors.dart';
-import '../../theme/text_style.dart';
+import 'package:overlay_kit/overlay_kit.dart';
+import 'package:flutter_base_project/app/extensions/widgets_scale_extension.dart';
+import '../../constants/assets/assets.gen.dart';
+import '../../constants/other/padding_and_radius_size.dart';
+import '../../navigation/route/route_factory.dart';
+import '../../theme/color/app_colors.dart';
+import '../../theme/text_style/text_style.dart';
 
 /// [widget] Toast mesaj da gösterilen custom widget eğer null ise default widget gösterilecektir
 /// [duration] Toast mesajı SN cinsinden gösterme süresi eğer null ise 3 Sn olarak devam edecek
-/// [textMessage] eğer [widget] null olupta bu Text metini default Toast message'nde gösterilecektir
-ToastFuture showToastMessage(BuildContext context, {Widget? widget, int? duration, String? textMessage}) {
-  if (widget == null && textMessage == null) {
-    throw "Toast Message de widget ve textMassage parametreleri ikisi birden null olamaz.\n"
-        "if(widget == null && textMessage == null) Doğru değil.";
-  } else {
-    return showToastWidget(
-      widget ??
-          Container(
-            padding: const EdgeInsets.symmetric(horizontal: 18.0, vertical: 12),
-            margin: const EdgeInsets.symmetric(horizontal: 50.0),
-            decoration: ShapeDecoration(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(radiusXS),
-              ),
-              color: Colors.black45,
-            ),
-            child: Text(
-              textMessage!,
-              style: s16W400Dark().copyWith(color: Colors.white),
-            ),
-          ),
-      context: context,
-      isIgnoring: false,
-      animation: StyledToastAnimation.slideFromTopFade,
-      reverseAnimation: StyledToastAnimation.slideToTopFade,
-      position: const StyledToastPosition(align: Alignment.topCenter, offset: 0.0),
-      startOffset: const Offset(0.0, -3.0),
-      reverseEndOffset: const Offset(0.0, -3.0),
-      duration: Duration(seconds: duration ?? 3),
-      animDuration: const Duration(seconds: 1),
-      curve: Curves.fastLinearToSlowEaseIn,
-      reverseCurve: Curves.fastOutSlowIn,
-    );
-  }
+void _showToastMessage({
+  required Widget widget,
+  int? duration,
+}) {
+  OverlayToastMessage.show(
+    widget: widget,
+    dismissAll: true,
+    duration: Duration(seconds: duration ?? 2),
+  );
 }
 
-ToastFuture showDoneToastMessage(BuildContext context, {int? duration, required String textMessage}) {
-  return showToastMessage(
-    context,
+void showDoneToastMessage(String text, {int? duration}) {
+  _showToastMessage(
     duration: duration,
-    widget: Padding(
+    widget: _ToastWidget(
+      textMessage: text,
+      backgroundColor: AppColors.green.shade200,
+      primaryColor: AppColors.green.shade800,
+      svgStr: Assets.icons.circleDoneIcon.path,
+    ),
+  );
+}
+
+void showWarningToastMessage(String text, {int? duration}) {
+  _showToastMessage(
+    duration: duration,
+    widget: _ToastWidget(
+      textMessage: text,
+      backgroundColor: const Color(0xffFFFCF2),
+      primaryColor: const Color(0xffFDB022),
+      svgStr: Assets.icons.warningIcon.path,
+    ),
+  );
+}
+
+void showErrorToastMessage(String text, {int? duration}) {
+  _showToastMessage(
+    duration: duration,
+    widget: _ToastWidget(
+      textMessage: text,
+      backgroundColor: const Color(0xffFFF9F9),
+      primaryColor: Theme.of(MyRouteFactory.context).colorScheme.error,
+      svgStr: Assets.icons.errorIcon.path,
+    ),
+  );
+}
+
+class _ToastWidget extends StatelessWidget {
+  final String textMessage;
+  final Color backgroundColor;
+  final Color primaryColor;
+  final String svgStr;
+
+  const _ToastWidget({
+    Key? key,
+    required this.textMessage,
+    required this.backgroundColor,
+    required this.primaryColor,
+    required this.svgStr,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
       padding: const EdgeInsets.all(paddingM),
-      child: Container(
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(radiusXS),
-            color: AppColor.lightGreenColor,
-            boxShadow: const [
-              BoxShadow(
-                color: Colors.black12,
-                offset: Offset.zero,
-                blurRadius: 3,
-                spreadRadius: 2,
-              )
-            ]),
+      child: Card(
+        color: backgroundColor,
+        shape: RoundedRectangleBorder(
+          side: BorderSide(
+            color: primaryColor,
+            width: 1.horizontalScale,
+          ),
+          borderRadius: BorderRadius.circular(radiusXXS),
+        ),
         child: Padding(
-          padding: EdgeInsets.all(paddingM.horizontalScale),
+          padding: EdgeInsets.all(paddingXXS.horizontalScale),
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
+              Container(
+                height: 40.verticalScale,
+                width: 4.horizontalScale,
+                decoration: BoxDecoration(
+                  color: primaryColor,
+                  borderRadius: BorderRadius.circular(radiusXXXXXXS),
+                ),
+              ),
+              const SizedBox(width: paddingXXS),
               SvgPicture.asset(
-                doneIcon,
-                width: 16.horizontalScale,
+                svgStr,
+                width: 24.horizontalScale,
               ),
               const SizedBox(width: paddingM),
               Flexible(
-                  child: Text(
-                textMessage,
-                style: s16W400Dark(),
-              ))
+                child: Text(
+                  textMessage,
+                  maxLines: 2,
+                  style: s16W400Dark,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              )
             ],
           ),
         ),
       ),
-    ),
-  );
+    );
+  }
 }

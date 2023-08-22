@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../constants/enum/cache_key_enum.dart';
@@ -21,28 +20,28 @@ class LocaleManager {
   }
 
   Future<void> removeAt(CacheKey key) async {
-    await _preferences.remove(describeEnum(key));
+    await _preferences.remove(key.name);
   }
 
   Future<void> setStringValue(CacheKey key, String value) async {
-    await _preferences.setString(describeEnum(key), value);
+    await _preferences.setString(key.name, value);
   }
 
   Future<void> setStringListValue(CacheKey key, List<String> value) async {
-    await _preferences.setStringList(describeEnum(key), value);
+    await _preferences.setStringList(key.name, value);
   }
 
   Future<void> setBoolValue(CacheKey key, bool value) async {
-    await _preferences.setBool(describeEnum(key), value);
+    await _preferences.setBool(key.name, value);
   }
 
   Future<void> setIntValue(CacheKey key, int value) async {
-    await _preferences.setInt(describeEnum(key), value);
+    await _preferences.setInt(key.name, value);
   }
 
-  String? getStringValue(CacheKey key) => _preferences.getString(describeEnum(key));
+  String? getStringValue(CacheKey key) => _preferences.getString(key.name);
 
-  bool? getBoolValue(CacheKey key) => _preferences.getBool(describeEnum(key));
+  bool? getBoolValue(CacheKey key) => _preferences.getBool(key.name);
 
-  int? getIntValue(CacheKey key) => _preferences.getInt(describeEnum(key));
+  int? getIntValue(CacheKey key) => _preferences.getInt(key.name);
 }
