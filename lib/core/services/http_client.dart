@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 import '../../app/constants/app/http_url.dart';
 import '../../app/constants/enum/general_enum.dart';
 import 'ihttp_client.dart';
-import '../exception/http_error_exception.dart';
+import '../exception/app_exception.dart';
 
 /// written this class for http client
 class HttpClient extends IHttpClient {
