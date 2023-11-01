@@ -11,10 +11,10 @@ import 'bootstrap/bootstrap.dart';
 /// flutter build appbundle --release --flavor development lib/app/main/main_development.dart
 void main() {
   environment = AppEnvironment.Development;
-  HttpUrl.baseUrl = 'sandbox.siparisim.dev';
+  HttpUrl.baseUrl = 'api.example.dev';
 
   bootstrap(
-    'https://sandbox.siparisim.dev/kafka/loki/app',
+    'https://api.example.dev/log',
     const App(title: 'Sbcli Example App Dev'),
   );
 }
