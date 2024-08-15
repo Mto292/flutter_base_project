@@ -37,7 +37,7 @@ class QuestionMessageDialog<T> extends DialogWidget<T> {
         const SizedBox(height: paddingM),
         Text(
           text,
-          style: s16W500Dark,
+          style: s16w500Dark,
           textAlign: TextAlign.center,
         ),
         const SizedBox(height: paddingM),

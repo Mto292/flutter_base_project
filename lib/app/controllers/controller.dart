@@ -1,11 +1,7 @@
 import 'dart:collection';
 import 'package:get/get.dart';
-import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:flutter_base_project/app/controllers/general/session_service.dart';
-import 'package:flutter_base_project/app/navigation/route/route.dart';
 import 'package:flutter_base_project/core/exception/app_exception.dart';
-import '../navigation/route/route_factory.dart';
 
 part 'digital_energy/module_controller.dart';
 

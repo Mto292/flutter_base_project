@@ -21,7 +21,7 @@ class UnknownRouteScreen extends StatelessWidget {
             const SizedBox(height: paddingM),
             Text(
               AppLocalization.getLabels.unknownPageRouteMessageText,
-              style: s16W400Dark,
+              style: s16w400Dark,
             ),
           ],
         ),

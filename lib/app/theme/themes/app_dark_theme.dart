@@ -1,45 +1,343 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_base_project/app/constants/other/padding_and_radius_size.dart';
 import 'package:flutter_base_project/app/theme/color/app_colors.dart';
+import '../../constants/assets/assets.dart';
 import '../../extensions/widgets_scale_extension.dart';
 import '../theme.dart';
 
 class AppDarkTheme implements AppTheme {
-  
-  AppDarkTheme({AppColors? AppColors});
+  @override
+  Color backgroundColor = AppColors.grey.shade100;
+  @override
+  Color scaffoldBackgroundColor = AppColors.grey.shade100;
+  @override
+  Color cardColor = Colors.white;
+  @override
+  Color bottomAppBarColor = Colors.white;
+  @override
+  Color disabledColor = AppColors.grey.shade100;
 
   @override
-  Brightness get brightness => Brightness.dark;
+  IconThemeData accentIconTheme = const IconThemeData(color: Colors.white);
 
   @override
-  Color get backgroundColor => Colors.black;
+  IconThemeData primaryIconTheme = const IconThemeData(color: Colors.white);
 
   @override
-  Color get scaffoldBackgroundColor => Colors.black;
+  IconThemeData iconTheme = const IconThemeData(color: Colors.black);
 
   @override
-  IconThemeData get accentIconTheme => const IconThemeData(color: Colors.black);
+  ColorScheme get colorScheme => ColorScheme(
+        primary: AppColors.primary,
+        onPrimary: Colors.white,
+        primaryContainer: AppColors.primaryContainer,
+        secondary: AppColors.secondary,
+        onSecondary: AppColors.grey.shade800,
+        secondaryContainer: AppColors.grey.shade800,
+        surface: AppColors.cardColor,
+        onSurface: AppColors.grey.shade800,
+        error: AppColors.red.shade800,
+        onError: Colors.white,
+        errorContainer: AppColors.red.shade600,
+        brightness: Brightness.light,
+        outline: AppColors.grey.shade600,
+        onSurfaceVariant: AppColors.blue.shade200,
+      );
 
   @override
-  IconThemeData get primaryIconTheme => const IconThemeData(color: Colors.black);
+  AppBarTheme get appBarTheme => AppBarTheme(
+        titleSpacing: 0,
+        elevation: 0,
+        color: AppColors.grey.shade100,
+        titleTextStyle: TextStyle(
+          fontSize: 16.horizontalScale,
+          fontWeight: FontWeight.w500,
+          color: AppColors.grey.shade800,
+        ),
+        centerTitle: true,
+        actionsIconTheme: IconThemeData(color: AppColors.grey.shade800),
+        iconTheme: IconThemeData(color: AppColors.grey.shade800),
+      );
 
   @override
-  IconThemeData get iconTheme => const IconThemeData(color: Colors.black);
+  CardTheme cardTheme = CardTheme(
+    elevation: 0,
+    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(radiusS)),
+    color: AppColors.blue.shade200,
+    margin: EdgeInsets.zero,
+  );
 
   @override
-  Color get cardColor => Colors.black;
+  TextTheme textTheme = TextTheme(
+    displayLarge: TextStyle(
+      fontSize: 8.horizontalScale,
+      fontWeight: FontWeight.w400,
+      color: AppColors.grey.shade800,
+      decorationColor: AppColors.grey.shade800,
+    ),
+    displayMedium: TextStyle(
+      fontSize: 10.horizontalScale,
+      fontWeight: FontWeight.w400,
+      color: AppColors.grey.shade800,
+      decorationColor: AppColors.grey.shade800,
+    ),
+    displaySmall: TextStyle(
+      fontSize: 11.horizontalScale,
+      fontWeight: FontWeight.w400,
+      color: AppColors.grey.shade800,
+      decorationColor: AppColors.grey.shade800,
+    ),
+    headlineMedium: TextStyle(
+      fontSize: 12.horizontalScale,
+      fontWeight: FontWeight.w400,
+      color: AppColors.grey.shade800,
+      decorationColor: AppColors.grey.shade800,
+    ),
+    headlineSmall: TextStyle(
+      fontSize: 13.horizontalScale,
+      fontWeight: FontWeight.w400,
+      color: AppColors.grey.shade800,
+      decorationColor: AppColors.grey.shade800,
+    ),
+    titleLarge: TextStyle(
+      fontSize: 22.horizontalScale,
+      fontWeight: FontWeight.w400,
+      color: AppColors.grey.shade800,
+      decorationColor: AppColors.grey.shade800,
+    ),
+    titleMedium: TextStyle(
+      fontSize: 15.horizontalScale,
+      fontWeight: FontWeight.w400,
+      color: AppColors.grey.shade800,
+      decorationColor: AppColors.grey.shade800,
+    ),
+    titleSmall: TextStyle(
+      fontSize: 16.horizontalScale,
+      fontWeight: FontWeight.w400,
+      color: AppColors.grey.shade800,
+      decorationColor: AppColors.grey.shade800,
+    ),
+    bodyLarge: TextStyle(
+      fontSize: 14.horizontalScale,
+      fontWeight: FontWeight.w400,
+      color: AppColors.grey.shade800,
+      decorationColor: AppColors.grey.shade800,
+    ),
+    bodyMedium: TextStyle(
+      fontSize: 18.horizontalScale,
+      fontWeight: FontWeight.w400,
+      color: AppColors.grey.shade800,
+      decorationColor: AppColors.grey.shade800,
+    ),
+    bodySmall: TextStyle(
+      fontSize: 20.horizontalScale,
+      fontWeight: FontWeight.w400,
+      color: AppColors.grey.shade800,
+      decorationColor: AppColors.grey.shade800,
+    ),
+    labelLarge: TextStyle(
+      fontSize: 26.horizontalScale,
+      fontWeight: FontWeight.w400,
+      color: AppColors.grey.shade800,
+      decorationColor: AppColors.grey.shade800,
+    ),
+    labelSmall: TextStyle(
+      fontSize: 32.horizontalScale,
+      fontWeight: FontWeight.w400,
+      color: AppColors.grey.shade800,
+      decorationColor: AppColors.grey.shade800,
+    ),
+  );
+
+  FloatingActionButtonThemeData floatingActionButtonThemeData = const FloatingActionButtonThemeData(
+    backgroundColor: AppColors.primary,
+    elevation: 0,
+  );
 
   @override
-  Color get bottomAppBarColor => Colors.black;
+  ElevatedButtonThemeData get elevatedButtonTheme => ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+          elevation: 0,
+          backgroundColor: AppColors.secondary,
+          foregroundColor: AppColors.grey.shade800,
+          disabledBackgroundColor: AppColors.grey.shade100,
+          disabledForegroundColor: AppColors.grey.shade800,
+          textStyle: TextStyle(
+            color: AppColors.grey.shade800,
+            fontWeight: FontWeight.w400,
+            fontSize: 16.horizontalScale,
+          ),
+          padding: EdgeInsets.zero,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(radiusXS),
+          ),
+        ),
+      );
 
   @override
-  Color get dividerColor => AppColors.lightWhite;
+  InputDecorationTheme inputDecorationTheme = InputDecorationTheme(
+    fillColor: Colors.white,
+    filled: true,
+    contentPadding: const EdgeInsets.symmetric(horizontal: paddingL, vertical: paddingXXXXS),
+    labelStyle: TextStyle(
+      fontSize: 14.horizontalScale,
+      fontWeight: FontWeight.w400,
+      color: AppColors.grey.shade800,
+    ),
+    errorStyle: TextStyle(
+      fontSize: 11.horizontalScale,
+      fontWeight: FontWeight.w400,
+      color: AppColors.red.shade800,
+    ),
+    counterStyle: TextStyle(
+      fontWeight: FontWeight.w400,
+      color: AppColors.grey.shade800,
+      fontSize: 11.horizontalScale,
+    ),
+    hintStyle: TextStyle(
+      fontWeight: FontWeight.w400,
+      color: AppColors.grey.shade600,
+      fontSize: 14.horizontalScale,
+    ),
+    enabledBorder: OutlineInputBorder(
+      borderSide: BorderSide(color: AppColors.blue.shade200),
+      borderRadius: BorderRadius.circular(
+        radiusS,
+      ),
+    ),
+    focusedBorder: OutlineInputBorder(
+      borderSide: BorderSide(color: AppColors.blue.shade200),
+      borderRadius: BorderRadius.circular(
+        radiusS,
+      ),
+    ),
+    focusedErrorBorder: OutlineInputBorder(
+      borderSide: BorderSide(color: AppColors.blue.shade200),
+      borderRadius: BorderRadius.circular(
+        radiusS,
+      ),
+    ),
+    errorBorder: OutlineInputBorder(
+      borderSide: BorderSide(color: AppColors.red.shade800),
+      borderRadius: BorderRadius.circular(
+        radiusS,
+      ),
+    ),
+    disabledBorder: OutlineInputBorder(
+      borderSide: BorderSide(color: AppColors.blue.shade200),
+      borderRadius: BorderRadius.circular(
+        radiusS,
+      ),
+    ),
+  );
 
   @override
-  Color get shadowColor => Colors.black26;
+  TextSelectionThemeData textSelectionThemeData = TextSelectionThemeData(
+    cursorColor: AppColors.secondary,
+    selectionColor: AppColors.secondary.withOpacity(0.2),
+    selectionHandleColor: AppColors.secondary,
+  );
 
   @override
-  ProgressIndicatorThemeData get progressIndicatorTheme => ProgressIndicatorThemeData(color: AppColors.primary);
+  TextButtonThemeData textButtonThemeData = TextButtonThemeData(
+    style: ButtonStyle(
+      backgroundColor: WidgetStateProperty.all<Color>(Colors.transparent),
+      foregroundColor: WidgetStateProperty.all<Color>(AppColors.primary),
+      shadowColor: WidgetStateProperty.all<Color>(Colors.transparent),
+      overlayColor: WidgetStateProperty.all<Color>(Colors.transparent),
+      textStyle: WidgetStateProperty.all<TextStyle>(
+        TextStyle(
+          color: AppColors.secondary,
+          fontFamily: fontFamily,
+          fontWeight: FontWeight.w400,
+          fontSize: 16.horizontalScale,
+        ),
+      ),
+    ),
+  );
+
+  @override
+  CheckboxThemeData checkboxThemeData = CheckboxThemeData(
+    fillColor: WidgetStateProperty.resolveWith((states) {
+      if (states.contains(WidgetState.selected)) {
+        return AppColors.primary;
+      }
+      return Colors.transparent;
+    }),
+    checkColor: WidgetStateProperty.all<Color?>(Colors.white),
+    side: const BorderSide(width: 0.7, color: AppColors.primary),
+    overlayColor: WidgetStateProperty.all<Color?>(AppColors.primary),
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(radiusXXXXS),
+    ),
+  );
+
+  @override
+  OutlinedButtonThemeData get outlinedButtonThemeData => OutlinedButtonThemeData(
+        style: OutlinedButton.styleFrom(
+          backgroundColor: Colors.transparent,
+          side: const BorderSide(color: AppColors.primary),
+          padding: EdgeInsets.zero,
+          disabledBackgroundColor: AppColors.grey.shade100,
+          disabledForegroundColor: AppColors.grey.shade800,
+          foregroundColor: AppColors.primary,
+          textStyle: TextStyle(
+            color: AppColors.primary,
+            fontWeight: FontWeight.w400,
+            fontSize: 16.horizontalScale,
+          ),
+          alignment: Alignment.center,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(radiusXXS),
+          ),
+        ),
+      );
+
+  @override
+  BottomAppBarTheme get bottomAppBarTheme => const BottomAppBarTheme(
+        color: Colors.transparent,
+        elevation: 0,
+      );
+
+  @override
+  DialogTheme get dialogTheme => DialogTheme(
+        backgroundColor: AppColors.cardColor,
+        elevation: 0,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(radiusL)),
+      );
+
+  @override
+  Brightness get brightness => Brightness.light;
+
+  @override
+  ColorScheme get buttonColorScheme => const ColorScheme(
+        primary: AppColors.primary,
+        primaryContainer: AppColors.primaryContainer,
+        secondary: AppColors.primaryContainer,
+        secondaryContainer: AppColors.primaryContainer,
+        surface: Colors.white,
+        error: Colors.red,
+        onPrimary: Colors.white,
+        onSecondary: Colors.white,
+        onSurface: Colors.white,
+        onError: Colors.white,
+        brightness: Brightness.light,
+      );
+
+  @override
+  Color get dividerColor => Colors.grey.shade400;
+
+  @override
+  DividerThemeData get dividerTheme => DividerThemeData(
+        color: Colors.grey.shade400,
+        space: 0,
+      );
+
+  @override
+  Color get hintColor => AppColors.grey.shade600;
+
+  @override
+  Color get indicatorColor => AppColors.primary;
 
   @override
   Color get primaryColorDark => AppColors.primary;
@@ -48,267 +346,30 @@ class AppDarkTheme implements AppTheme {
   Color get primaryColorLight => AppColors.primary;
 
   @override
-  Color get hintColor => AppColors.grey.shade600;
-
-  @override
-  ColorScheme get colorScheme => ColorScheme(
-        primary: AppColors.primary,
-        primaryContainer: AppColors.primaryContainer,
-        secondary: Colors.white,
-        secondaryContainer: Colors.white,
-        tertiary: AppColors.tertiary,
-        surface: AppColors.cardColor,
-        background: AppColors.grey.shade100,
-        error: Colors.red,
-        onPrimary: Colors.white,
-        onSecondary: AppColors.grey.shade800,
-        onSurface: Colors.white,
-        onBackground: AppColors.grey.shade600,
-        onError: Colors.white,
-        brightness: Brightness.dark,
-        outline: AppColors.grey.shade600,
-      );
-
-  @override
-  ColorScheme get buttonColorScheme => ColorScheme(
-        primary: AppColors.primary,
-        primaryContainer: AppColors.primaryContainer,
-        secondary: AppColors.primaryContainer,
-        secondaryContainer: AppColors.primaryContainer,
-        surface: Colors.white,
-        background: AppColors.primary,
-        error: AppColors.red.shade800,
-        onPrimary: Colors.white,
-        onSecondary: AppColors.onSecondary,
-        onSurface: Colors.white,
-        onBackground: Colors.white,
-        onError: Colors.white,
-        brightness: Brightness.light,
-        errorContainer: AppColors.red.shade600,
-      );
-
-  @override
-  CardTheme get cardTheme => CardTheme(
-        elevation: 0,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(radiusXXS)),
-        color: Colors.black,
-        margin: EdgeInsets.zero,
-      );
-
-  @override
-  TextTheme get textTheme => TextTheme(
-        ///HeadLine
-        headline1: TextStyle(
-          fontSize: 12.horizontalScale,
-          fontWeight: FontWeight.w400,
-          color: AppColors.grey.shade800,
-        ),
-        headline2: TextStyle(
-          fontSize: 13.horizontalScale,
-          fontWeight: FontWeight.w400,
-          color: AppColors.grey.shade800,
-        ),
-        headline3: TextStyle(
-          fontSize: 18.horizontalScale,
-          fontWeight: FontWeight.w400,
-          color: AppColors.grey.shade800,
-        ),
-        headline4: TextStyle(
-          fontSize: 15.horizontalScale,
-          fontWeight: FontWeight.w400,
-          color: AppColors.grey.shade800,
-        ),
-        headline5: TextStyle(
-          fontSize: 20.horizontalScale,
-          fontWeight: FontWeight.w400,
-          color: AppColors.grey.shade800,
-        ),
-        headline6: TextStyle(
-          fontSize: 26.horizontalScale,
-          fontWeight: FontWeight.w400,
-          color: AppColors.grey.shade800,
-        ),
-
-        ///BodyText
-        bodyText1: TextStyle(
-          fontSize: 16.horizontalScale,
-          fontWeight: FontWeight.w400,
-          color: AppColors.grey.shade800,
-        ),
-        bodyText2: TextStyle(
-          fontSize: 10.horizontalScale,
-          fontWeight: FontWeight.w400,
-          color: AppColors.grey.shade800,
-        ),
-        subtitle1: TextStyle(
-          fontSize: 14.horizontalScale,
-          fontWeight: FontWeight.w500,
-          color: AppColors.grey.shade800,
-        ),
-        subtitle2: TextStyle(
-          fontSize: 8.horizontalScale,
-          fontWeight: FontWeight.w400,
-          color: AppColors.grey.shade800,
-        ),
-        caption: TextStyle(
-          fontSize: 11.horizontalScale,
-          fontWeight: FontWeight.w400,
-          color: AppColors.grey.shade800,
-        ),
-      );
-
-  @override
-  ElevatedButtonThemeData get elevatedButtonTheme => ElevatedButtonThemeData(
-        style: ElevatedButton.styleFrom(
-          elevation: 0,
-          backgroundColor: AppColors.primary,
-          foregroundColor: Colors.white,
-          disabledBackgroundColor: AppColors.grey.shade600,
-          disabledForegroundColor: Colors.white,
-          textStyle: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.w400,
-            fontSize: 16.horizontalScale,
-          ),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(radiusXL),
-          ),
-        ),
-      );
-
-  @override
-  InputDecorationTheme get inputDecorationTheme => InputDecorationTheme(
-        fillColor: Colors.white,
-        filled: true,
-        labelStyle: TextStyle(
-          fontSize: 14.horizontalScale,
-          fontWeight: FontWeight.w400,
-          color: AppColors.grey.shade800,
-        ),
-        hintStyle: TextStyle(
-          fontWeight: FontWeight.w400,
-          color: AppColors.grey.shade600,
-          fontSize: 14.horizontalScale,
-        ),
-        enabledBorder: OutlineInputBorder(
-          borderSide: BorderSide.none,
-          borderRadius: BorderRadius.circular(
-            radiusXS,
-          ),
-        ),
-        focusedBorder: OutlineInputBorder(
-          borderSide: BorderSide.none,
-          borderRadius: BorderRadius.circular(
-            radiusXS,
-          ),
-        ),
-        focusedErrorBorder: OutlineInputBorder(
-          borderSide: BorderSide.none,
-          borderRadius: BorderRadius.circular(
-            radiusXS,
-          ),
-        ),
-        errorBorder: OutlineInputBorder(
-          borderSide: BorderSide.none,
-          borderRadius: BorderRadius.circular(
-            radiusXS,
-          ),
-        ),
-        disabledBorder: OutlineInputBorder(
-          borderSide: BorderSide.none,
-          borderRadius: BorderRadius.circular(
-            radiusXS,
-          ),
-        ),
-      );
-
-  @override
-  TextSelectionThemeData get textSelectionThemeData => TextSelectionThemeData(
-        cursorColor: AppColors.primary,
-        selectionColor: AppColors.primary.withOpacity(0.2),
-        selectionHandleColor: AppColors.primary,
-      );
-
-  @override
-  TextButtonThemeData get textButtonThemeData => TextButtonThemeData(
-        style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all<Color>(Colors.transparent),
-          foregroundColor: MaterialStateProperty.all<Color>(AppColors.primary),
-          shadowColor: MaterialStateProperty.all<Color>(Colors.transparent),
-          overlayColor: MaterialStateProperty.all<Color>(Colors.transparent),
-          textStyle: MaterialStateProperty.all<TextStyle>(
-            TextStyle(
-              color: AppColors.primary,
-              fontWeight: FontWeight.w400,
-              fontSize: 16.horizontalScale,
-            ),
-          ),
-        ),
-      );
-
-  @override
-  OutlinedButtonThemeData get outlinedButtonThemeData => OutlinedButtonThemeData(
-        style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all<Color>(Colors.transparent),
-          foregroundColor: MaterialStateProperty.all<Color>(AppColors.grey.shade800),
-          side: MaterialStateProperty.resolveWith((Set<MaterialState> states) {
-            if (states.contains(MaterialState.disabled)) return BorderSide(color: AppColors.grey.shade100);
-            return BorderSide(color: AppColors.grey.shade800);
-          }),
-          padding: MaterialStateProperty.all<EdgeInsets>(EdgeInsets.zero),
-          textStyle: MaterialStateProperty.all<TextStyle>(
-            TextStyle(
-              color: AppColors.grey.shade800,
-              fontWeight: FontWeight.w400,
-              fontSize: 16.horizontalScale,
-            ),
-          ),
-          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-            RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(radiusXL),
-            ),
-          ),
-        ),
-      );
-
-  @override
-  CheckboxThemeData get checkboxThemeData => CheckboxThemeData(
-        fillColor: MaterialStateProperty.all<Color?>(AppColors.primary),
-        checkColor: MaterialStateProperty.all<Color?>(Colors.white),
-        side: BorderSide(width: 0.7, color: AppColors.primary),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(radiusXXXS),
-        ),
-      );
+  ProgressIndicatorThemeData get progressIndicatorTheme => const ProgressIndicatorThemeData(color: AppColors.primary);
 
   @override
   RadioThemeData get radioThemeData => RadioThemeData(
-        fillColor: MaterialStateProperty.all<Color>(AppColors.primary),
+        fillColor: WidgetStateProperty.resolveWith((states) {
+          if (states.contains(WidgetState.disabled)) {
+            return AppColors.grey.shade100;
+          }
+          return AppColors.primary;
+        }),
+        overlayColor: WidgetStateProperty.resolveWith((states) {
+          if (states.contains(WidgetState.disabled)) {
+            return AppColors.grey.shade100;
+          }
+          return AppColors.primary;
+        }),
       );
 
   @override
-  DividerThemeData get dividerTheme => DividerThemeData(
-        color: AppColors.lightWhite,
-        space: 0,
-      );
-
-  @override
-  AppBarTheme get appBarTheme => AppBarTheme(
-        titleSpacing: 0,
-        elevation: 0,
-        color: AppColors.appBarColor,
-        titleTextStyle: TextStyle(
-          fontSize: 16.horizontalScale,
-          fontWeight: FontWeight.w500,
-          color: AppColors.onAppBarColor,
-        ),
-        centerTitle: true,
-        actionsIconTheme: IconThemeData(color: AppColors.onAppBarColor),
-        iconTheme: IconThemeData(color: AppColors.onAppBarColor),
-      );
+  Color get shadowColor => Colors.black26;
 
   @override
   TabBarTheme get tabBarTheme => TabBarTheme(
+        dividerHeight: 0,
         labelColor: AppColors.primary,
         labelStyle: TextStyle(
           fontSize: 14.horizontalScale,
@@ -324,17 +385,65 @@ class AppDarkTheme implements AppTheme {
       );
 
   @override
-  Color get indicatorColor => AppColors.primary;
-
-  @override
-  BottomAppBarTheme get bottomAppBarTheme => const BottomAppBarTheme(
-        color: Colors.transparent,
-        elevation: 0,
+  PopupMenuThemeData get popupMenuThemeData => PopupMenuThemeData(
+        color: Colors.white,
+        elevation: 8,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(radiusS),
+        ),
+        textStyle: TextStyle(
+          fontSize: 14.horizontalScale,
+          fontWeight: FontWeight.w400,
+          color: AppColors.grey.shade800,
+        ),
+        labelTextStyle: WidgetStatePropertyAll(
+          TextStyle(
+            fontSize: 14.horizontalScale,
+            fontWeight: FontWeight.w400,
+            color: AppColors.grey.shade800,
+          ),
+        ),
+        enableFeedback: true,
       );
 
   @override
-  DialogTheme get dialogTheme => DialogTheme(
-        backgroundColor: Colors.black,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(radiusL)),
+  TimePickerThemeData get timePickerThemeData => TimePickerThemeData(
+        padding: const EdgeInsets.only(left: paddingXL, right: paddingXL, top: paddingXL, bottom: paddingM),
+        backgroundColor: AppColors.grey.shade100,
+        dayPeriodColor: Colors.grey,
+        dayPeriodTextStyle: TextStyle(
+          fontSize: 20.horizontalScale,
+          fontWeight: FontWeight.w500,
+        ),
+        dialBackgroundColor: Colors.white,
+        dialHandColor: AppColors.primary,
+        dialTextColor: AppColors.secondary,
+        dialTextStyle: TextStyle(
+          fontSize: 20.horizontalScale,
+          fontWeight: FontWeight.w500,
+        ),
+        // elevation: ,
+        entryModeIconColor: AppColors.primary,
+        helpTextStyle: TextStyle(
+          fontSize: 16.horizontalScale,
+          fontWeight: FontWeight.w500,
+          color: AppColors.primary,
+        ),
+        hourMinuteColor: Colors.white,
+        // hourMinuteShape: ,
+        hourMinuteTextColor: AppColors.secondary,
+        hourMinuteTextStyle: TextStyle(
+          fontSize: 20.horizontalScale,
+          fontWeight: FontWeight.w500,
+          color: Colors.green,
+        ),
+      );
+
+  @override
+  DatePickerThemeData get datePickerTheme => DatePickerThemeData(
+        backgroundColor: AppColors.grey.shade100,
+        headerBackgroundColor: AppColors.grey.shade100,
+        headerForegroundColor: AppColors.primary,
+        yearForegroundColor: WidgetStatePropertyAll(AppColors.grey.shade800),
       );
 }

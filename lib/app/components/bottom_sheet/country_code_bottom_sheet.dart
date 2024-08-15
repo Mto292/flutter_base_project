@@ -55,7 +55,7 @@ class CountryCodeBottomSheet<T> extends BottomSheetWidget<T> {
                               child: Text(
                                 AppLocalization.getLabels.country[key]!,
                                 maxLines: 1,
-                                style: s14W500Dark,
+                                style: s14w500Dark,
                               ),
                             ),
                             const SizedBox(width: paddingXXXXS),
@@ -66,7 +66,7 @@ class CountryCodeBottomSheet<T> extends BottomSheetWidget<T> {
                             const SizedBox(width: paddingXXXXS),
                             Text(
                               '($value)',
-                              style: s14W500Dark,
+                              style: s14w500Dark,
                             ),
                           ],
                         ),

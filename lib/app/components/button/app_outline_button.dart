@@ -46,12 +46,12 @@ class AppOutlineButton extends StatelessWidget {
             OutlinedButtonTheme.of(context).style!.copyWith(
                   side: borderColor == null
                       ? null
-                      : MaterialStateProperty.all<BorderSide>(
+                      : WidgetStateProperty.all<BorderSide>(
                           BorderSide(color: borderColor!),
                         ),
                   shape: radius == null
                       ? null
-                      : MaterialStateProperty.all<RoundedRectangleBorder>(
+                      : WidgetStateProperty.all<RoundedRectangleBorder>(
                           RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(radius!),
                           ),
@@ -62,7 +62,7 @@ class AppOutlineButton extends StatelessWidget {
           child: widget ??
               Text(
                 txt!,
-                style: s16W400Dark.copyWith(color: textColor),
+                style: s16w400Dark.copyWith(color: textColor),
               ),
         ),
       ),

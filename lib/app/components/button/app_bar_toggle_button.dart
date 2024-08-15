@@ -108,7 +108,7 @@ class _Button extends StatelessWidget {
                       padding: EdgeInsets.only(right: paddingXXXS.horizontalScale),
                       child: SvgPicture.asset(
                         svgAssets!,
-                        color: Theme.of(context).textTheme.subtitle1!.color,
+                        // color: Theme.of(context).elevatedButtonTheme.style.backgroundColor as Widget,
                         width: 14.horizontalScale,
                         height: 14.horizontalScale,
                         fit: BoxFit.scaleDown,
@@ -120,7 +120,7 @@ class _Button extends StatelessWidget {
                   child: Text(
                     txt,
                     maxLines: 1,
-                    style: s13W400Dark.copyWith(color: selected ? textSelectedColor : null),
+                    style: s13w400Dark.copyWith(color: selected ? textSelectedColor : null),
                   ),
                 ),
               ),

@@ -33,14 +33,14 @@ class TextFieldWithButtonDialog<T> extends DialogWidget<T> {
       children: [
         Text(
           text,
-          style: s16W500Dark,
+          style: s16w500Dark,
           textAlign: TextAlign.center,
         ),
         const SizedBox(height: paddingL),
         TextField(
           decoration: InputDecoration(
             enabledBorder: Theme.of(MyRouteFactory.context).inputDecorationTheme.enabledBorder!.copyWith(
-                  borderSide: BorderSide(color: Theme.of(context).colorScheme.onBackground),
+                  borderSide: BorderSide(color: Theme.of(context).colorScheme.onSurface),
                 ),
             focusedBorder: Theme.of(MyRouteFactory.context).inputDecorationTheme.focusedBorder!.copyWith(
                   borderSide: const BorderSide(width: 0.5),

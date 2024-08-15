@@ -9,33 +9,70 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c9b3b9e1-275c-496c-8caa-52de5d4919bb" name="Changes" comment="" />
+    <list default="true" id="c9b3b9e1-275c-496c-8caa-52de5d4919bb" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_base_project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_base_project.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/components/bottom_sheet/country_code_bottom_sheet.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/components/bottom_sheet/country_code_bottom_sheet.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/components/button/app_bar_toggle_button.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/components/button/app_bar_toggle_button.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/components/button/app_outline_button.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/components/button/app_outline_button.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/components/button/button_with_icon.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/components/button/button_with_icon.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/components/dialog/text_field_with_button_dialog.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/components/dialog/text_field_with_button_dialog.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/components/message/done_message_dialog.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/components/message/done_message_dialog.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/components/message/error_message_dialog.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/components/message/error_message_dialog.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/components/message/question_message_dialog.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/components/message/question_message_dialog.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/components/message/toast_message.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/components/message/toast_message.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/components/other_widgets/phone_no_text_field_with_code_country.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/components/other_widgets/phone_no_text_field_with_code_country.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/theme/color/app_colors.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/theme/color/app_colors.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/theme/text_style/text_style.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/theme/text_style/text_style.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/theme/theme.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/theme/theme.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/theme/themes/app_dark_theme.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/theme/themes/app_dark_theme.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/app/theme/themes/app_light_theme.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/app/theme/themes/app_light_theme.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/screens/unknown_route_screen/unknown_route_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/screens/unknown_route_screen/unknown_route_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2UKxggbVbM7BFqi6qMjr4VEL3FI" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/mto/Documents/project/example/flutter_base_project/assets/icons&quot;,
-    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Flutter.product.executor": "Debug",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "master",
+    "io.flutter.reload.alreadyRun": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/mustafaturkmen/Documents/project/flutter_base_project",
+    "show.migrate.to.gradle.popup": "false"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/assets/icons" />

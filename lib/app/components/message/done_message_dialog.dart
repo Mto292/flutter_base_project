@@ -31,7 +31,7 @@ class DoneMessageDialog<T> extends DialogWidget<T> {
           children: [
             Text(
               text,
-              style: s18W700Dark,
+              style: s18w500Dark,
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: paddingM),

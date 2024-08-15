@@ -72,12 +72,12 @@ class PhoneNoTextFieldWithCodeCountry extends StatelessWidget {
                     Text(
                       countryCodeNo,
                       textAlign: TextAlign.center,
-                      style: s14W400Dark,
+                      style: s14w400Dark,
                     ),
                     SizedBox(width: paddingXXXXS.horizontalScale),
                     Assets.icons.arrowDownIosIcon.svg(
                       width: 10.horizontalScale,
-                      color: Theme.of(context).colorScheme.onBackground,
+                      color: Theme.of(context).colorScheme.onSurface,
                     ),
                   ],
                 ),

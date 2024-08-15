@@ -107,7 +107,7 @@ class _ToastWidget extends StatelessWidget {
                 child: Text(
                   textMessage,
                   maxLines: 2,
-                  style: s16W400Dark,
+                  style: s16w400Dark,
                   overflow: TextOverflow.ellipsis,
                 ),
               )

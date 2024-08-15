@@ -36,7 +36,7 @@ class ButtonWithIcon extends StatelessWidget {
           const SizedBox(width: paddingM),
           Text(
             text,
-            style: s16W400Dark.copyWith(
+            style: s16w400Dark.copyWith(
               color: Theme.of(context).colorScheme.onPrimary,
             ),
           ),
