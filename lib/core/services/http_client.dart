@@ -1,11 +1,9 @@
 import 'dart:async';
-import 'dart:io';
-import 'package:dop_logger/dop_logger.dart';
 import 'package:http/http.dart' as http;
 import '../../app/constants/app/http_url.dart';
 import '../../app/constants/enum/general_enum.dart';
 import 'ihttp_client.dart';
-import '../exception/app_exception.dart';
+import 'interceptors.dart';
 
 /// written this class for http client
 class HttpClient extends IHttpClient {
@@ -30,25 +28,18 @@ class HttpClient extends IHttpClient {
       bodyParam,
       baseUrl: baseUrl,
     ).catchError(
-      (error, stackTrace) => _httpErrorHandler(
-        '${baseUrl ?? HttpUrl.baseUrl}/$method',
-        error,
-        stackTrace,
-        headerParam,
-        bodyParam,
+      (error) => Interceptors().onError(
+        url: '${baseUrl ?? HttpUrl.baseUrl}/$method',
+        header: headerParam,
+        requestBody: bodyParam,
+        error: error.toString(),
       ),
     );
-    HttpLogger.instance.log(
-      url: '${baseUrl ?? HttpUrl.baseUrl}/$method',
-      statusCode: response!.statusCode,
-      header: headerParam,
+    Interceptors().onResponse(
       requestBody: bodyParam,
-      responseBody: response.body,
+      response: response!,
     );
-    if (response.statusCode >= HttpStatus.clientClosedRequest &&
-        response.statusCode < HttpStatus.networkConnectTimeoutError) {
-      throw ServerError();
-    }
+
     return response;
   }
 
@@ -103,28 +94,5 @@ class HttpClient extends IHttpClient {
         break;
     }
     return response;
-  }
-
-  _httpErrorHandler(
-    String url,
-    error,
-    stackTrace,
-    Map<String, String>? header,
-    Map<String, dynamic> requestBody,
-  ) {
-    HttpLogger.instance.log(
-      url: url,
-      statusCode: 000,
-      header: header,
-      requestBody: requestBody,
-      responseBody: 'catchError: $error',
-    );
-    if (error is SocketException) {
-      throw InternetError();
-    } else if (error is FormatException) {
-      throw AppException();
-    } else {
-      throw AppException();
-    }
   }
 }

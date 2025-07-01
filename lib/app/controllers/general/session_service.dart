@@ -2,6 +2,7 @@ import 'package:get/get.dart';
 import '../../constants/enum/cache_key_enum.dart';
 import '../../libs/locale_manager/locale_manager.dart';
 import '../../model/response/auth/user_info_model.dart';
+import '../../navigation/route/route_factory.dart';
 
 /*
 Uygulamada ziyaretçinin ya da üyenin aktif tüm oturum bilgileri yer alacak:
@@ -48,12 +49,13 @@ class SessionService extends GetxController {
   }
 
   /// Kullanıcı çıkış yaptığında çağırılır.
-  Future<void> logOut() async {
+  Future<void> logOutAndRestart([bool restart = true]) async {
     await Future.wait([
       LocaleManager.instance.removeAt(CacheKey.token),
       setLoggedIn(false),
     ]);
     currentUser = UserInfoModel();
+    if (restart) await MyRouteFactory().restartApp();
   }
 
   /// Kullanıcı giriş yapılıdığında çağırılır

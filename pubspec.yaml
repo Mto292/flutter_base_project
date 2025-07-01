@@ -17,50 +17,52 @@ dependencies:
   # Core
   intl: any
   collection: any
-  shared_preferences: ^2.3.2
-  uuid: ^4.4.2
-  package_info_plus: ^8.0.2
-  url_launcher: ^6.3.0
-  async: ^2.11.0
-  device_info_plus: ^10.1.2
-  background_json_parser: ^1.0.5 # Json parse işlemini yapar
+  shared_preferences: 2.5.3
+  uuid: ^4.5.1
+  package_info_plus: ^8.3.0
+  url_launcher: ^6.3.1
+  async: ^2.13.0
+  device_info_plus: ^11.4.0
+  background_json_parser: ^1.0.6
   text_mask: ^1.0.4
+  app_links: 6.4.0
 
   # Network
-  http: ^1.2.2
-  connectivity: ^3.0.6
-  webview_flutter: ^4.8.0
+  http: ^1.4.0
+  connectivity_plus: ^6.1.4
+  webview_flutter: ^4.11.0
   socket_io_client: ^2.0.3+1
-  cached_network_image: ^3.2.3
+  webview_flutter_wkwebview: ^3.20.0 # webview_flutter tarafından kullanılmakta ama son versiyon 3.18.0 olanda ios ta uygulamayı patlattığı için bu 3.17.0 versiyon sabitlendi daha sonra daha yeni versiyonlara geçilebilir
+  cached_network_image: ^3.4.1
   android_id: ^0.4.0
 
   # UI
   cupertino_icons: ^1.0.8
-  flutter_svg: ^2.0.10+1
-  flutter_local_notifications: ^17.2.2
-  banner_image: ^1.0.7
-  overlay_kit: ^1.0.8
+  flutter_svg: ^2.1.0
+  flutter_local_notifications: ^19.1.0
+  banner_image: ^1.0.9
+  overlay_kit: ^1.1.2
 
   # Firebase
-  firebase_core: ^3.3.0
-  firebase_messaging: ^15.0.4
-  firebase_dynamic_links: ^6.0.4
+  firebase_core: ^3.13.0
+  firebase_messaging: ^15.2.5
 
   # State manager
-  get: ^4.6.6
+  get: ^4.7.2
 
   # Error handler
-  dop_logger:
-    git:
-      url: https://github.com/dophub/applogger.git
-      ref: prod-0801
+  app_logger: ^0.0.6
+
 
 dev_dependencies:
+  flutter_test:
+    sdk: flutter
   flutter_lints: any
   build_runner:
   flutter_gen_runner:
 
 dependency_overrides:
+  async: ^2.8.2
 
 flutter_gen:
   output: lib/app/constants/assets
@@ -74,11 +76,9 @@ flutter_gen:
 flutter:
   uses-material-design: true
   assets:
-    - assets/other/
     - assets/flags/
-    - assets/illustrations/
     - assets/icons/
-    - assets/gif/
+    - assets/fonts/
 
   fonts:
     - family: GreycliffCF

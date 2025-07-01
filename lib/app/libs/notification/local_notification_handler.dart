@@ -28,13 +28,17 @@ class LocalNotificationHandler {
     return _instance!;
   }
 
-  _initializeOtherPlatform() async {
+  Future<void> _initializeOtherPlatform() async {
     final flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
-    final initializationSettingsDarwin = DarwinInitializationSettings(
-      onDidReceiveLocalNotification: _onDidReceiveLocalNotification,
+    const initializationSettingsDarwin = DarwinInitializationSettings(
+      requestAlertPermission: false,
+      requestSoundPermission: false,
+      requestBadgePermission: false,
+      requestProvisionalPermission: false,
+      requestCriticalPermission: false,
     );
-    final InitializationSettings initializationSettings = InitializationSettings(
-      android: const AndroidInitializationSettings('app_icon'),
+    const InitializationSettings initializationSettings = InitializationSettings(
+      android: AndroidInitializationSettings('app_icon'),
       iOS: initializationSettingsDarwin,
     );
     flutterLocalNotificationsPlugin.initialize(
@@ -47,13 +51,9 @@ class LocalNotificationHandler {
     debugPrint('selectNotification payload: $payload');
   }
 
-  void _onDidReceiveLocalNotification(int id, String? title, String? body, String? payload) async {
-    debugPrint('onDidReceiveLocalNotification payload: $payload');
-  }
-
   Future<void> showNotification({required String title, String? body}) async {
     notificationId++;
-    await flutterLocalNotificationsPlugin!.show(
+    flutterLocalNotificationsPlugin!.show(
       notificationId,
       title,
       body,

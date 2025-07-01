@@ -1,16 +1,21 @@
-import 'package:connectivity/connectivity.dart';
-import 'package:flutter/material.dart' show BuildContext, FocusScope;
+import 'package:connectivity_plus/connectivity_plus.dart';
+import 'package:flutter/widgets.dart';
 
-extension CheckInternetExtension on BuildContext {
+extension ContextExtension on BuildContext {
   ///it written for check the internet
   Future<bool> checkInternet() async {
-    var connectivityResult = await Connectivity().checkConnectivity();
-    if (connectivityResult == ConnectivityResult.none) {
-      return false;
-    } else {
+    try {
+      final connectivityResult = await Connectivity().checkConnectivity();
+      if (connectivityResult.first == ConnectivityResult.none) {
+        return false;
+      } else {
+        return true;
+      }
+    } catch (_) {
       return true;
     }
   }
 
-  void unFocus() => FocusScope.of(this).unfocus();
+  void unFocus([FocusNode? focusNode]) =>
+      (focusNode ?? FocusManager.instance.primaryFocus ?? FocusScope.of(this)).unfocus();
 }

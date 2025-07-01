@@ -1,4 +1,3 @@
-import 'package:dop_logger/dop_logger.dart';
 import 'package:flutter/cupertino.dart';
 import 'route.dart';
 
@@ -25,7 +24,6 @@ class _RouteGenerate {
   _RouteGenerate(this.map);
 
   Route<dynamic>? onGenerateRoute(RouteSettings setting) {
-    NavigationLogger.instance.log(setting);
     final _map = map[setting.name];
     return _map?.call(setting);
   }

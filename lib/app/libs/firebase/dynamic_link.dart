@@ -1,8 +1,9 @@
-import 'package:firebase_dynamic_links/firebase_dynamic_links.dart';
+import 'package:app_links/app_links.dart';
 import 'package:flutter/material.dart';
 
 class DynamicLink {
   static DynamicLink? _instance;
+  bool hasListener = false;
 
   DynamicLink._();
 
@@ -13,9 +14,23 @@ class DynamicLink {
 
   Future<void> getAndListenToDynamicLink() async {
     try {
-      final PendingDynamicLinkData? initialLink = await FirebaseDynamicLinks.instance.getInitialLink();
+      if (hasListener) return;
+      hasListener = true;
+      final appLinks = AppLinks();
+      appLinks.uriLinkStream.listen((uri) {
+        print('appLinks: ${uri.host}');
+        _onComeFromDynamicLink(uri);
+      });
     } catch (e) {
-      debugPrint('getAndListenToDynamicLink Error');
+      debugPrintStack(label: e.toString());
     }
   }
+
+  void _onComeFromDynamicLink(Uri deepLink) async {
+    try {} catch (e) {
+      debugPrint('onComeFromDynamicLink.instance.onLink Error: $e');
+      rethrow;
+    }
+  }
+
 }

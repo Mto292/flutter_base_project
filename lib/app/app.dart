@@ -1,3 +1,4 @@
+import 'package:app_logger/app_logger.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:overlay_kit/overlay_kit.dart';
@@ -33,7 +34,10 @@ class App extends StatelessWidget {
             final sipState = context.getState<AppConfigController>();
             return MaterialApp(
               navigatorKey: MyRouteFactory().navigatorKey,
-              navigatorObservers: [NavigationHistoryObserver()],
+              navigatorObservers: [
+                NavigationHistoryObserver(),
+                NavigationLogger.instance,
+              ],
               locale: sipState.locale,
               supportedLocales: getSupportedLocalList,
               localizationsDelegates: [
